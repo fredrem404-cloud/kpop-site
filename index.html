@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-POP: The Global Phenomenon</title>
+    <meta name="description" content="K-POP의 세계적인 열풍과 그 매력을 소개하는 프리미엄 페이지입니다.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="reveal">K-POP WORLD</h1>
+            <p class="reveal" style="animation-delay: 0.2s;">세계를 매료시킨 한국의 음악, 퍼포먼스, 그리고 문화.</p>
+            <a href="#about" class="btn btn-primary reveal" style="animation-delay: 0.4s;">더 알아보기</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">What is K-POP?</h2>
+        <div class="card-grid">
+            <div class="glass-card reveal">
+                <h3>Music & Sound</h3>
+                <p>힙합, R&B, EDM, 팝 등 다양한 장르를 넘나드는 실험적이고 중독성 있는 사운드.</p>
+            </div>
+            <div class="glass-card reveal" style="animation-delay: 0.2s;">
+                <h3>Performance</h3>
+                <p>칼군무로 대표되는 압도적인 퍼포먼스와 완벽한 무대 연출.</p>
+            </div>
+            <div class="glass-card reveal" style="animation-delay: 0.4s;">
+                <h3>Visual Style</h3>
+                <p>트렌디한 패션과 화려한 뮤직비디오로 선도하는 글로벌 스타일 아이콘.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="featured">
+        <div class="featured-content">
+            <div class="featured-image">
+                <img src="group_showcase.png" alt="K-POP Group Showcase">
+            </div>
+            <div class="featured-text">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Global Impact</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">
+                    K-POP은 이제 단순한 음악 장르를 넘어 전 세계적인 문화 현상이 되었습니다. 
+                    빌보드 차트 점령부터 대규모 월드 투어까지, 전 세계 팬들과 소통하며 새로운 역사를 쓰고 있습니다.
+                </p>
+                <p>
+                    디지털 기술과 소셜 미디어를 활용한 혁신적인 소통 방식은 팬덤 문화를 재정의하고 있습니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section id="join" style="text-align: center;">
+        <h2 class="section-title">Join the Fandom</h2>
+        <p style="margin-bottom: 40px; font-size: 1.2rem;">당신도 K-POP의 매력에 빠져보세요.</p>
+        <div class="card-grid" style="max-width: 800px; margin: 0 auto;">
+            <div class="glass-card">
+                <h3>Discover</h3>
+                <p>최신 음원 차트와 뮤직비디오를 확인하세요.</p>
+            </div>
+            <div class="glass-card">
+                <h3>Connect</h3>
+                <p>전 세계 팬들과 열정을 공유하세요.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2026 K-POP World. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple reveal animation on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // We don't need .active if we use animation property in CSS directly for some elements,
+                    // but for scroll reveal it's better to add a class.
+                }
+            });
+        }, observerOptions);
+
+        reveals.forEach(reveal => {
+            observer.observe(reveal);
+        });
+    </script>
+</body>
+</html>
